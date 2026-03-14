@@ -1,203 +1,238 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTR-OnTouR | Foto & Video Produktion</title>
+  <meta name="description" content="OTR-OnTouR by Milan Bachofner – professionelle Foto- und Videoproduktion für Events, Business, Social Media und Markenauftritte." />
 
-<title>OTR-OnTouR | Foto & Video Produktion</title>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4JNCK3EB46"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4JNCK3EB46');
+  </script>
 
-<style>
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" sizes="72x72" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon.png">
 
-body{
-margin:0;
-font-family:Arial;
-background:#0b0c0e;
-color:white;
-}
-
-.hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)),
-url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32");
-background-size:cover;
-}
-
-.hero h1{
-font-size:48px;
-margin-bottom:20px;
-}
-
-.cta{
-padding:14px 30px;
-background:#caa25a;
-color:black;
-text-decoration:none;
-font-weight:bold;
-border-radius:6px;
-}
-
-.section{
-padding:80px 10%;
-text-align:center;
-}
-
-.cards{
-display:flex;
-gap:40px;
-justify-content:center;
-flex-wrap:wrap;
-}
-
-.card{
-background:#141517;
-padding:40px;
-border-radius:12px;
-width:280px;
-}
-
-.card h3{
-color:#caa25a;
-}
-
-.price{
-font-size:28px;
-margin:20px 0;
-}
-
-button{
-padding:12px 25px;
-background:#caa25a;
-border:none;
-font-weight:bold;
-cursor:pointer;
-}
-
-form{
-max-width:500px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:10px;
-}
-
-input,textarea{
-padding:10px;
-border:none;
-border-radius:4px;
-}
-
-footer{
-padding:40px;
-text-align:center;
-background:#111;
-}
-
-</style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<section class="hero">
+  <!-- HERO -->
+  <header class="hero">
+    <div class="video-bg">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        webkit-playsinline
+        preload="auto"
+        poster="video-cover.jpg">
+        <source src="video_3.mp4?v=20260203_02" type="video/mp4" />
+      </video>
+    </div>
 
-<h1>Foto & Video Produktion</h1>
+    <div class="overlay"></div>
 
-<p>OTR-OnTouR by Milan Bachofner</p>
+    <nav class="navbar">
+      <div class="logo">OTR-OnTouR</div>
 
-<a class="cta" href="#angebote">Angebot ansehen</a>
+      <div class="nav-links">
+        <a href="#angebote">Angebote</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#anfrage" class="nav-cta">Anfrage</a>
+      </div>
+    </nav>
 
-</section>
+    <div class="hero-content">
+      <p class="eyebrow">Foto • Video • Social Media Content</p>
+      <h1>Starker visueller Content für Marken, Events und Menschen.</h1>
+      <p class="hero-text">
+        Professionelle Foto- und Videoproduktion mit Premium-Look.
+        Für Unternehmen, Künstler, Events und Social Media Auftritte.
+      </p>
 
-<section id="angebote" class="section">
+      <div class="hero-buttons">
+        <a href="#angebote" class="btn btn-gold">Angebote ansehen</a>
+        <a href="#anfrage" class="btn btn-outline">Jetzt anfragen</a>
+      </div>
+    </div>
+  </header>
 
-<h2>Unsere Angebote</h2>
+  <!-- TRUST BAR -->
+  <section class="trust-bar">
+    <div>Professioneller Look</div>
+    <div>Cinematic Editing</div>
+    <div>Social Media Ready</div>
+    <div>Schnelle Lieferung</div>
+  </section>
 
-<div class="cards">
+  <!-- ANGEBOTE -->
+  <section id="angebote" class="section">
+    <div class="container">
+      <p class="section-tag">Angebote</p>
+      <h2>Drei klare Pakete für deinen Auftritt</h2>
 
-<div class="card">
+      <div class="cards">
+        <div class="card">
+          <p class="card-label">Foto</p>
+          <h3>Foto Paket</h3>
+          <p class="card-text">
+            Ideal für Portraits, Business, Events und Social Media Content.
+          </p>
+          <ul>
+            <li>Professionelles Fotoshooting</li>
+            <li>15 bearbeitete Bilder</li>
+            <li>Farbkorrektur & Retusche</li>
+            <li>Lieferung in 48h</li>
+          </ul>
+          <div class="price">ab 250 CHF</div>
+          <button class="btn btn-gold full" onclick="selectOffer('Foto Paket')">Foto anfragen</button>
+        </div>
 
-<h3>Foto Paket</h3>
+        <div class="card featured">
+          <p class="card-label">Video</p>
+          <h3>Video Paket</h3>
+          <p class="card-text">
+            Für Reels, Promo-Videos, Events oder Imageclips mit starkem Look.
+          </p>
+          <ul>
+            <li>Videodreh bis 2h</li>
+            <li>Cinematic Editing</li>
+            <li>Colorgrading & Musik</li>
+            <li>Social Media Format</li>
+          </ul>
+          <div class="price">ab 450 CHF</div>
+          <button class="btn btn-gold full" onclick="selectOffer('Video Paket')">Video anfragen</button>
+        </div>
 
-<p>Professionelles Fotoshooting</p>
+        <div class="card">
+          <p class="card-label">Premium</p>
+          <h3>Foto + Video</h3>
+          <p class="card-text">
+            Die beste Lösung für Unternehmen, Künstler und hochwertige Events.
+          </p>
+          <ul>
+            <li>Foto + Video Produktion</li>
+            <li>Content für Social Media</li>
+            <li>Bearbeitung inklusive</li>
+            <li>Starker Gesamtauftritt</li>
+          </ul>
+          <div class="price">ab 750 CHF</div>
+          <button class="btn btn-gold full" onclick="selectOffer('Premium Paket')">Premium anfragen</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="price">ab 250 CHF</div>
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="section portfolio">
+    <div class="container">
+      <p class="section-tag">Portfolio</p>
+      <h2>Beispiele für deinen möglichen Look</h2>
 
-<button onclick="scrollToForm('Foto Paket')">Angebot anfragen</button>
+      <div class="portfolio-grid">
+        <div class="portfolio-item" style="background-image:url('foto-business.jpg');">
+          <div class="portfolio-overlay">Business Content</div>
+        </div>
+        <div class="portfolio-item" style="background-image:url('foto-event.jpg');">
+          <div class="portfolio-overlay">Event Visuals</div>
+        </div>
+        <div class="portfolio-item" style="background-image:url('foto-portrait.jpg');">
+          <div class="portfolio-overlay">Portrait & Branding</div>
+        </div>
+        <div class="portfolio-item" style="background-image:url('video-cover.jpg');">
+          <div class="portfolio-overlay">Cinematic Video</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</div>
+  <!-- WHY -->
+  <section class="section why">
+    <div class="container split">
+      <div>
+        <p class="section-tag">Warum OTR-OnTouR</p>
+        <h2>Kein Standard. Sondern Content mit Wirkung.</h2>
+      </div>
+      <div>
+        <p>
+          Gute Bilder sehen nicht nur schön aus. Sie schaffen Vertrauen.
+          Gute Videos ziehen Aufmerksamkeit und halten sie.
+          Genau dafür ist OTR-OnTouR aufgebaut.
+        </p>
 
-<div class="card">
+        <div class="why-points">
+          <div class="why-box">
+            <h4>Premium Look</h4>
+            <p>Saubere Bildsprache, hochwertige Bearbeitung und professioneller Gesamteindruck.</p>
+          </div>
+          <div class="why-box">
+            <h4>Schneller Ablauf</h4>
+            <p>Klare Kommunikation, effiziente Umsetzung und saubere Lieferung.</p>
+          </div>
+          <div class="why-box">
+            <h4>Direkt für Social Media nutzbar</h4>
+            <p>Inhalte, die nicht nur gut aussehen, sondern auch online performen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h3>Video Paket</h3>
+  <!-- ANFRAGE -->
+  <section id="anfrage" class="section form-section">
+    <div class="container narrow">
+      <p class="section-tag">Anfrage</p>
+      <h2>Projekt oder Angebot anfragen</h2>
+      <p class="form-intro">
+        Wähle dein Paket und beschreibe kurz dein Projekt. Danach kannst du direkt Kontakt aufnehmen.
+      </p>
 
-<p>Cinematic Video Produktion</p>
+      <form class="contact-form" action="mailto:info@otr-ontour.com" method="post" enctype="text/plain">
+        <input type="text" name="Name" placeholder="Name" required />
+        <input type="email" name="E-Mail" placeholder="E-Mail" required />
+        <input type="text" name="Telefon" placeholder="Telefon / WhatsApp (optional)" />
+        <input type="text" id="offer" name="Angebot" placeholder="Gewähltes Angebot" />
+        <textarea name="Projekt" rows="6" placeholder="Beschreibe kurz dein Projekt, Ort, Datum und was du brauchst." required></textarea>
+        <button type="submit" class="btn btn-gold full">Anfrage senden</button>
+      </form>
 
-<div class="price">ab 450 CHF</div>
+      <div class="direct-links">
+        <a class="direct-link" href="mailto:info@otr-ontour.com?subject=Anfrage%20OTR-OnTouR">Per E-Mail anfragen</a>
+        <a class="direct-link" href="https://www.instagram.com/otr_ontour" target="_blank" rel="noopener">Instagram öffnen</a>
+      </div>
+    </div>
+  </section>
 
-<button onclick="scrollToForm('Video Paket')">Video anfragen</button>
+  <!-- FLOATING ICON BAR -->
+  <div class="icon-bar">
+    <a class="icon-link"
+       href="https://www.instagram.com/otr_ontour"
+       target="_blank"
+       rel="noopener"
+       aria-label="Instagram">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.3A2.8 2.8 0 1 1 14.8 12 2.8 2.8 0 0 1 12 14.8zM17.75 6.25a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+      </svg>
+    </a>
 
-</div>
+    <a class="icon-link"
+       href="mailto:info@otr-ontour.com?subject=Anfrage%20OTR-OnTouR"
+       aria-label="Kontakt">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+    </a>
+  </div>
 
-<div class="card">
-
-<h3>Premium Paket</h3>
-
-<p>Foto + Video Produktion</p>
-
-<div class="price">ab 750 CHF</div>
-
-<button onclick="scrollToForm('Premium Paket')">Premium anfragen</button>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2>Projekt anfragen</h2>
-
-<form action="https://formspree.io/f/DEINFORMID" method="POST">
-
-<input type="text" name="name" placeholder="Name" required>
-
-<input type="email" name="email" placeholder="E-Mail" required>
-
-<input type="text" id="angebot" name="angebot" placeholder="Gewähltes Angebot">
-
-<textarea name="message" placeholder="Projektbeschreibung"></textarea>
-
-<button type="submit">Anfrage senden</button>
-
-</form>
-
-</section>
-
-<footer>
-
-<p>© OTR-OnTouR | Milan Bachofner</p>
-
-</footer>
-
-<script>
-
-function scrollToForm(angebot){
-
-document.getElementById("angebot").value=angebot
-
-window.scrollTo({
-top:document.body.scrollHeight,
-behavior:"smooth"
-})
-
-}
-
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
