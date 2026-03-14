@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OTR-OnTouR | Foto & Video Produktion</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#0b0c0e;
+color:white;
+}
+
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)),
+url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32");
+background-size:cover;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.cta{
+padding:14px 30px;
+background:#caa25a;
+color:black;
+text-decoration:none;
+font-weight:bold;
+border-radius:6px;
+}
+
+.section{
+padding:80px 10%;
+text-align:center;
+}
+
+.cards{
+display:flex;
+gap:40px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.card{
+background:#141517;
+padding:40px;
+border-radius:12px;
+width:280px;
+}
+
+.card h3{
+color:#caa25a;
+}
+
+.price{
+font-size:28px;
+margin:20px 0;
+}
+
+button{
+padding:12px 25px;
+background:#caa25a;
+border:none;
+font-weight:bold;
+cursor:pointer;
+}
+
+form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+input,textarea{
+padding:10px;
+border:none;
+border-radius:4px;
+}
+
+footer{
+padding:40px;
+text-align:center;
+background:#111;
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<h1>Foto & Video Produktion</h1>
+
+<p>OTR-OnTouR by Milan Bachofner</p>
+
+<a class="cta" href="#angebote">Angebot ansehen</a>
+
+</section>
+
+<section id="angebote" class="section">
+
+<h2>Unsere Angebote</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Foto Paket</h3>
+
+<p>Professionelles Fotoshooting</p>
+
+<div class="price">ab 250 CHF</div>
+
+<button onclick="scrollToForm('Foto Paket')">Angebot anfragen</button>
+
+</div>
+
+<div class="card">
+
+<h3>Video Paket</h3>
+
+<p>Cinematic Video Produktion</p>
+
+<div class="price">ab 450 CHF</div>
+
+<button onclick="scrollToForm('Video Paket')">Video anfragen</button>
+
+</div>
+
+<div class="card">
+
+<h3>Premium Paket</h3>
+
+<p>Foto + Video Produktion</p>
+
+<div class="price">ab 750 CHF</div>
+
+<button onclick="scrollToForm('Premium Paket')">Premium anfragen</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Projekt anfragen</h2>
+
+<form action="https://formspree.io/f/DEINFORMID" method="POST">
+
+<input type="text" name="name" placeholder="Name" required>
+
+<input type="email" name="email" placeholder="E-Mail" required>
+
+<input type="text" id="angebot" name="angebot" placeholder="Gewähltes Angebot">
+
+<textarea name="message" placeholder="Projektbeschreibung"></textarea>
+
+<button type="submit">Anfrage senden</button>
+
+</form>
+
+</section>
+
+<footer>
+
+<p>© OTR-OnTouR | Milan Bachofner</p>
+
+</footer>
+
+<script>
+
+function scrollToForm(angebot){
+
+document.getElementById("angebot").value=angebot
+
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+})
+
+}
+
+</script>
+
+</body>
+</html>
