@@ -448,17 +448,15 @@ p{
   background:rgba(255,255,255,0.04);
 }
 
-@media (max-width: 980px){
+/* iPad Hochformat und ähnliche Tablets:
+   2 Spalten beibehalten, damit unten Hochformat auch wirklich Hochformat bleibt */
+@media (max-width: 1024px){
   .cards{
     grid-template-columns:1fr;
   }
 
   .card.featured{
     transform:none;
-  }
-
-  .portfolio-grid{
-    grid-template-columns:1fr;
   }
 
   .split{
@@ -469,12 +467,20 @@ p{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .portfolio-landscape,
+  .portfolio-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+
+  .portfolio-landscape{
+    aspect-ratio:16 / 9;
+  }
+
   .portfolio-portrait{
-    aspect-ratio:4 / 3;
+    aspect-ratio:4 / 5;
   }
 }
 
+/* Erst bei kleineren Phones auf 1 Spalte */
 @media (max-width: 700px){
   .navbar{
     padding:20px 22px;
@@ -520,5 +526,17 @@ p{
 
   .section{
     padding:72px 0;
+  }
+
+  .portfolio-grid{
+    grid-template-columns:1fr;
+  }
+
+  .portfolio-landscape{
+    aspect-ratio:16 / 10;
+  }
+
+  .portfolio-portrait{
+    aspect-ratio:4 / 5;
   }
 }
