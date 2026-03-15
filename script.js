@@ -12,7 +12,7 @@ function selectOffer(offerName) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const portfolioVideos = document.querySelectorAll(".portfolio-video");
+  const portfolioVideos = document.querySelectorAll(".portfolio-video, .swap-video");
 
   portfolioVideos.forEach((video) => {
     video.muted = true;
@@ -40,5 +40,25 @@ document.addEventListener("DOMContentLoaded", () => {
     video.addEventListener("touchstart", tryPlay, { passive: true });
 
     tryPlay();
+  });
+
+  const hoverCards = document.querySelectorAll(".portfolio-hover-swap");
+
+  hoverCards.forEach((card) => {
+    const hoverVideo = card.querySelector(".swap-video");
+
+    if (!hoverVideo) return;
+
+    card.addEventListener("mouseenter", () => {
+      const promise = hoverVideo.play();
+      if (promise !== undefined) {
+        promise.catch(() => {});
+      }
+    });
+
+    card.addEventListener("mouseleave", () => {
+      hoverVideo.pause();
+      hoverVideo.currentTime = 0;
+    });
   });
 });
