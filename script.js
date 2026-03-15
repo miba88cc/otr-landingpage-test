@@ -12,6 +12,41 @@ function selectOffer(offerName) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const heroVideo = document.getElementById("heroVideo");
+
+  if (heroVideo) {
+    heroVideo.muted = true;
+    heroVideo.defaultMuted = true;
+    heroVideo.playsInline = true;
+    heroVideo.autoplay = true;
+    heroVideo.loop = true;
+
+    heroVideo.setAttribute("muted", "");
+    heroVideo.setAttribute("playsinline", "");
+    heroVideo.setAttribute("webkit-playsinline", "");
+    heroVideo.setAttribute("autoplay", "");
+    heroVideo.setAttribute("loop", "");
+
+    const forceHeroPlay = () => {
+      const promise = heroVideo.play();
+      if (promise !== undefined) {
+        promise.catch(() => {});
+      }
+    };
+
+    heroVideo.addEventListener("loadeddata", forceHeroPlay);
+    heroVideo.addEventListener("canplay", forceHeroPlay);
+    window.addEventListener("pageshow", forceHeroPlay);
+
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) {
+        forceHeroPlay();
+      }
+    });
+
+    forceHeroPlay();
+  }
+
   const portfolioVideos = document.querySelectorAll(".portfolio-video, .swap-video");
 
   portfolioVideos.forEach((video) => {
