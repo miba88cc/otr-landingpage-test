@@ -18,9 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
     video.muted = true;
     video.defaultMuted = true;
     video.playsInline = true;
+    video.autoplay = true;
+    video.loop = true;
+
     video.setAttribute("muted", "");
     video.setAttribute("playsinline", "");
     video.setAttribute("webkit-playsinline", "");
+    video.setAttribute("autoplay", "");
+    video.setAttribute("loop", "");
 
     const tryPlay = () => {
       const promise = video.play();
@@ -31,6 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     video.addEventListener("loadeddata", tryPlay);
     video.addEventListener("canplay", tryPlay);
+    video.addEventListener("mouseenter", tryPlay);
+    video.addEventListener("touchstart", tryPlay, { passive: true });
 
     tryPlay();
   });
