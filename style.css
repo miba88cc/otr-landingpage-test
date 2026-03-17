@@ -94,6 +94,7 @@ p{
   position:relative;
   min-height:100vh;
   overflow:hidden;
+  background:url("portrait_branding.jpg") center center / cover no-repeat;
 }
 
 .video-bg{
@@ -107,7 +108,7 @@ p{
   height:100%;
   object-fit:cover;
   display:block;
-  background:#000;
+  background:transparent;
 }
 
 .overlay{
