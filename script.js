@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     heroVideo.setAttribute("loop", "");
 
     const forceHeroPlay = () => {
+      heroVideo.load();
       const promise = heroVideo.play();
       if (promise !== undefined) {
         promise.catch(() => {});
