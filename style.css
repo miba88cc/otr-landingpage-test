@@ -12,7 +12,6 @@
   --radius:22px;
   --shadow:0 20px 60px rgba(0,0,0,0.35);
   --max:1180px;
-  --headerHeight:92px;
 }
 
 *{
@@ -21,7 +20,7 @@
 
 html{
   scroll-behavior:smooth;
-  scroll-padding-top:110px;
+  scroll-padding-top:20px;
 }
 
 body{
@@ -97,7 +96,6 @@ p{
   min-height:100svh;
   overflow:hidden;
   background:url("portrait_branding.jpg") center center / cover no-repeat;
-  padding-top:var(--headerHeight);
 }
 
 .video-bg{
@@ -128,19 +126,12 @@ p{
 }
 
 .navbar{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:100;
+  position:relative;
+  z-index:3;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:18px 42px;
-  background:rgba(7,8,10,0.58);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(255,255,255,0.08);
+  padding:28px 42px;
 }
 
 .logo-wrap{
@@ -179,7 +170,7 @@ p{
   z-index:3;
   width:min(1100px, calc(100% - 40px));
   margin:0 auto;
-  padding:120px 0 100px;
+  padding:110px 0 100px;
 }
 
 .eyebrow{
@@ -642,12 +633,8 @@ p{
 }
 
 @media (max-width: 700px){
-  :root{
-    --headerHeight:124px;
-  }
-
   .navbar{
-    padding:16px 20px;
+    padding:20px 22px;
     flex-direction:column;
     gap:14px;
   }
@@ -664,7 +651,6 @@ p{
 
   .hero{
     min-height:auto;
-    padding-top:var(--headerHeight);
   }
 
   .hero-content{
