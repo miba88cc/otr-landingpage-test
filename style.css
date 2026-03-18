@@ -7,11 +7,12 @@
   --gold:#caa25a;
   --gold-light:#d8b474;
   --line:rgba(255,255,255,0.08);
-  --overlayTop:0.28;
-  --overlayBottom:0.60;
+  --overlayTop:0.22;
+  --overlayBottom:0.58;
   --radius:22px;
   --shadow:0 20px 60px rgba(0,0,0,0.35);
   --max:1180px;
+  --headerHeight:92px;
 }
 
 *{
@@ -20,6 +21,7 @@
 
 html{
   scroll-behavior:smooth;
+  scroll-padding-top:110px;
 }
 
 body{
@@ -92,9 +94,10 @@ p{
 
 .hero{
   position:relative;
-  min-height:100vh;
+  min-height:100svh;
   overflow:hidden;
   background:url("portrait_branding.jpg") center center / cover no-repeat;
+  padding-top:var(--headerHeight);
 }
 
 .video-bg{
@@ -116,7 +119,7 @@ p{
   inset:0;
   z-index:1;
   background:
-    radial-gradient(900px 450px at 50% 18%, rgba(202,162,90,0.12), transparent 60%),
+    radial-gradient(900px 450px at 50% 18%, rgba(202,162,90,0.10), transparent 60%),
     linear-gradient(
       180deg,
       rgba(0,0,0,var(--overlayTop)) 0%,
@@ -125,12 +128,19 @@ p{
 }
 
 .navbar{
-  position:relative;
-  z-index:3;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:28px 42px;
+  padding:18px 42px;
+  background:rgba(7,8,10,0.58);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
 .logo-wrap{
@@ -162,7 +172,6 @@ p{
   border-radius:999px;
   border:1px solid rgba(255,255,255,0.18);
   background:rgba(255,255,255,0.06);
-  backdrop-filter:blur(10px);
 }
 
 .hero-content{
@@ -170,7 +179,7 @@ p{
   z-index:3;
   width:min(1100px, calc(100% - 40px));
   margin:0 auto;
-  padding:140px 0 100px;
+  padding:120px 0 100px;
 }
 
 .eyebrow{
@@ -503,7 +512,8 @@ p{
 }
 
 .contact-form input,
-.contact-form textarea{
+.contact-form textarea,
+.contact-form select{
   width:100%;
   padding:16px 18px;
   background:#12151a;
@@ -514,13 +524,20 @@ p{
   outline:none;
 }
 
+.contact-form select{
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+}
+
 .contact-form input::placeholder,
 .contact-form textarea::placeholder{
   color:#8f96a1;
 }
 
 .contact-form input:focus,
-.contact-form textarea:focus{
+.contact-form textarea:focus,
+.contact-form select:focus{
   border-color:rgba(202,162,90,0.6);
   box-shadow:0 0 0 4px rgba(202,162,90,0.08);
 }
@@ -622,19 +639,15 @@ p{
   .portfolio-grid{
     grid-template-columns:repeat(2, minmax(0, 1fr));
   }
-
-  .portfolio-landscape{
-    aspect-ratio:16 / 9;
-  }
-
-  .portfolio-portrait{
-    aspect-ratio:4 / 5;
-  }
 }
 
 @media (max-width: 700px){
+  :root{
+    --headerHeight:124px;
+  }
+
   .navbar{
-    padding:20px 22px;
+    padding:16px 20px;
     flex-direction:column;
     gap:14px;
   }
@@ -649,8 +662,13 @@ p{
     justify-content:center;
   }
 
+  .hero{
+    min-height:auto;
+    padding-top:var(--headerHeight);
+  }
+
   .hero-content{
-    padding:100px 0 90px;
+    padding:90px 0 80px;
   }
 
   .hero-buttons{
