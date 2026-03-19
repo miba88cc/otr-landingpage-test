@@ -1,247 +1,324 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OTR-OnTouR</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTR-OnTouR | Foto & Video Produktion</title>
+  <meta name="description" content="OTR-OnTouR by Milan Bachofner – professionelle Foto- und Videoproduktion für Events, Business, Social Media und Markenauftritte." />
 
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.png">
-
-  <!-- Google Analytics (optional – nur wenn du ID hast) -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=DEINE-ID"></script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4JNCK3EB46"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'DEINE-ID');
+    gtag('config', 'G-4JNCK3EB46');
   </script>
-  -->
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+  <link rel="icon" type="image/png" sizes="72x72" href="favicon(1).png">
+  <link rel="shortcut icon" href="favicon(1).png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon(1).png">
 
-    body {
-      background: #0b0c0e;
-      color: white;
-    }
-
-    /* HERO */
-    .hero {
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .hero video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: auto;
-      height: 100%;
-      min-width: 100%;
-      min-height: 100%;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.35);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 100px 20px;
-      max-width: 900px;
-    }
-
-    .logo {
-      width: 80px;
-      margin-bottom: 30px;
-    }
-
-    h1 {
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
-
-    p {
-      color: #ccc;
-      margin-bottom: 30px;
-      line-height: 1.6;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 16px 28px;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-right: 10px;
-    }
-
-    .btn-primary {
-      background: #caa25a;
-      color: black;
-    }
-
-    .btn-secondary {
-      border: 1px solid white;
-      color: white;
-    }
-
-    /* SECTION */
-    .section {
-      padding: 80px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .grid {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-
-    .card {
-      background: #141518;
-      padding: 20px;
-      border-radius: 16px;
-    }
-
-    .price {
-      font-size: 24px;
-      margin: 10px 0;
-      color: #caa25a;
-    }
-
-    /* FORM */
-    form {
-      display: grid;
-      gap: 15px;
-    }
-
-    input, textarea, select {
-      padding: 14px;
-      border-radius: 8px;
-      border: none;
-    }
-
-    button {
-      background: #caa25a;
-      border: none;
-      padding: 16px;
-      border-radius: 40px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: #aaa;
-      font-size: 14px;
-    }
-
-    footer a {
-      color: #caa25a;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-  </style>
+  <link rel="stylesheet" href="style.css?v=20260319_fullsite_01" />
 </head>
-<body>
+<body id="top">
 
-<!-- HERO -->
-<section class="hero">
-
-  <!-- VIDEO FIX (iPhone wichtig!) -->
-  <video autoplay muted loop playsinline webkit-playsinline>
-    <source src="landingpage.mp4" type="video/mp4">
-  </video>
-
-  <div class="overlay"></div>
-
-  <div class="hero-content">
-    <img src="Logo White_OTR-OnTouR.png" class="logo">
-
-    <h1>Starker visueller Content für Marken, Events und Menschen.</h1>
-
-    <p>Professionelle Foto- und Videoproduktion mit Premium-Look.</p>
-
-    <a href="#abo" class="btn btn-primary">Abo-Modelle ansehen</a>
-    <a href="#kontakt" class="btn btn-secondary">Jetzt anfragen</a>
-  </div>
-</section>
-
-<!-- ABOS -->
-<section id="abo" class="section">
-  <h2>Abo-Modelle</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Starter</h3>
-      <p class="price">ab 390 CHF</p>
-      <p>Content für Social Media & kleinere Projekte</p>
+  <header class="hero">
+    <div class="video-bg">
+      <video
+        id="heroVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        webkit-playsinline
+        preload="metadata">
+        <source src="landingpage.mp4?v=20260319_01" type="video/mp4">
+      </video>
     </div>
 
-    <div class="card">
-      <h3>Growth</h3>
-      <p class="price">ab 690 CHF</p>
-      <p>Regelmässiger Content + Branding</p>
+    <div class="overlay"></div>
+
+    <nav class="navbar">
+      <a href="#top" class="logo-wrap" aria-label="OTR-OnTouR Startseite">
+        <img src="Logo White_OTR-OnTouR.png" alt="OTR-OnTouR Logo" class="logo-img">
+      </a>
+
+      <div class="nav-links">
+        <a href="#abos">Abos</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#einzelprojekt">Einzelprojekt</a>
+        <a href="#anfrage" class="nav-cta">Anfrage</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <p class="eyebrow">Foto • Video • Social Media Content</p>
+      <h1>Starker visueller Content für Marken, Events und Menschen.</h1>
+      <p class="hero-text">
+        Professionelle Foto- und Videoproduktion mit Premium-Look.
+        Für Unternehmen, Künstler, Events und Social Media Auftritte.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#abos" class="btn btn-gold">Abo-Modelle ansehen</a>
+        <a href="#anfrage" class="btn btn-outline" onclick="selectOffer('Individuelle Anfrage')">Jetzt anfragen</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="trust-bar">
+    <div class="trust-item">
+      <span class="trust-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2 4 5v6c0 5.25 3.4 10.1 8 11 4.6-.9 8-5.75 8-11V5l-8-3Zm0 4.2 4 1.5v3.1c0 3.45-1.96 6.7-4 7.78-2.04-1.08-4-4.33-4-7.78V7.7l4-1.5Z"/>
+        </svg>
+      </span>
+      <span>Professioneller Look</span>
     </div>
 
-    <div class="card">
-      <h3>Premium</h3>
-      <p class="price">ab 990 CHF</p>
-      <p>Full Content System + Strategie</p>
+    <div class="trust-item">
+      <span class="trust-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 6h4l2-2h4l2 2h4v12H4V6Zm8 2.2-2.2 3.8H12l-1 3.8 4.2-5.8H13l1-1.8H12Z"/>
+        </svg>
+      </span>
+      <span>Cinematic Editing</span>
     </div>
-  </div>
-</section>
 
-<!-- KONTAKT -->
-<section id="kontakt" class="section">
-  <h2>Anfrage</h2>
+    <div class="trust-item">
+      <span class="trust-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm10 0a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM2 17c0-2.21 2.69-4 6-4s6 1.79 6 4v2H2v-2Zm8.8 2H22v-2c0-1.95-2.1-3.58-4.86-3.93 1.1.77 1.86 1.82 1.86 2.93v3Z"/>
+        </svg>
+      </span>
+      <span>Social Media Ready</span>
+    </div>
 
-  <form action="https://formspree.io/f/YOUR-ID" method="POST">
-    
-    <input type="text" name="name" placeholder="Name" required>
-    
-    <input type="email" name="email" placeholder="E-Mail" required>
+    <div class="trust-item">
+      <span class="trust-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M13 3a9 9 0 1 0 8.95 10h-2.02A7 7 0 1 1 13 5V3Zm1 1v6h6A6 6 0 0 0 14 4Zm-3.3 5.3 2.6 2.6 4.4-4.4 1.4 1.4-5.8 5.8-4-4 1.4-1.4Z"/>
+        </svg>
+      </span>
+      <span>Schnelle Lieferung</span>
+    </div>
+  </section>
 
-    <select name="angebot">
-      <option value="">Angebot auswählen</option>
-      <option>Starter</option>
-      <option>Growth</option>
-      <option>Premium</option>
-      <option>Einzelprojekt</option>
-    </select>
+  <section id="abos" class="section">
+    <div class="container">
+      <p class="section-tag">Abo-Modelle</p>
+      <h2>Monatliche Content-Modelle für einen starken Auftritt</h2>
+      <p class="section-intro">
+        Regelmässiger Content schafft Vertrauen, Wiedererkennung und Sichtbarkeit.
+        Wähle das Modell, das zu deinem Unternehmen und deinem Bedarf passt.
+      </p>
 
-    <textarea name="message" placeholder="Dein Projekt"></textarea>
+      <div class="cards">
+        <div class="card">
+          <p class="card-label">Starter</p>
+          <h3>Für den professionellen Einstieg</h3>
+          <p class="card-text">
+            Ideal für kleinere Businesses, Selbständige und lokale Brands, die regelmässig sichtbar sein wollen.
+          </p>
+          <ul>
+            <li>1 Produktion pro Monat</li>
+            <li>1 Kurzvideo / Reel</li>
+            <li>8 bearbeitete Fotos</li>
+            <li>Social-Media-ready</li>
+          </ul>
+          <div class="price">ab 590 CHF / Monat</div>
+          <button type="button" class="btn btn-gold full" onclick="selectOffer('Starter Abo')">Starter wählen</button>
+        </div>
 
-    <button type="submit">Anfrage senden</button>
+        <div class="card featured">
+          <p class="card-label">Growth</p>
+          <h3>Für konstante Sichtbarkeit</h3>
+          <p class="card-text">
+            Für Marken und Unternehmen, die professionell auftreten und regelmässig hochwertigen Content brauchen.
+          </p>
+          <ul>
+            <li>2 Produktionen pro Monat</li>
+            <li>3 Kurzvideos / Reels</li>
+            <li>20 bearbeitete Fotos</li>
+            <li>Content für Social Media & Website</li>
+          </ul>
+          <div class="price">ab 990 CHF / Monat</div>
+          <button type="button" class="btn btn-gold full" onclick="selectOffer('Growth Abo')">Growth wählen</button>
+        </div>
 
-  </form>
-</section>
+        <div class="card">
+          <p class="card-label">Premium</p>
+          <h3>Für maximale Wirkung</h3>
+          <p class="card-text">
+            Für Unternehmen, Artists und Brands mit höherem Anspruch an Präsenz, Qualität und Kontinuität.
+          </p>
+          <ul>
+            <li>Foto + Video kombiniert</li>
+            <li>Laufende Content-Produktion</li>
+            <li>Priorisierte Bearbeitung</li>
+            <li>Kreative Begleitung</li>
+          </ul>
+          <div class="price">ab 1’490 CHF / Monat</div>
+          <button type="button" class="btn btn-gold full" onclick="selectOffer('Premium Abo')">Premium wählen</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 OTR-OnTouR</p>
-  <a href="impressum.html">Impressum</a>
-  <a href="datenschutz.html">Datenschutz</a>
-</footer>
+  <section id="portfolio" class="section portfolio">
+    <div class="container">
+      <p class="section-tag">Portfolio</p>
+      <h2>Beispiele für deinen möglichen Look</h2>
 
+      <div class="portfolio-grid">
+        <div class="portfolio-item portfolio-landscape">
+          <div class="portfolio-media">
+            <video class="portfolio-video" muted loop playsinline webkit-playsinline preload="metadata">
+              <source src="video_business.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="portfolio-overlay">Business Content</div>
+        </div>
+
+        <div class="portfolio-item portfolio-landscape">
+          <div class="portfolio-media">
+            <video class="portfolio-video" muted loop playsinline webkit-playsinline preload="metadata">
+              <source src="video_cinematic.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="portfolio-overlay">Cinematic Video</div>
+        </div>
+
+        <div class="portfolio-item portfolio-portrait portfolio-hover-swap">
+          <div class="portfolio-media">
+            <img src="event.jpg" alt="Event Visuals" class="swap-photo">
+            <video class="swap-video" muted loop playsinline webkit-playsinline preload="metadata" poster="event.jpg">
+              <source src="video_event.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="portfolio-overlay">Event Visuals</div>
+        </div>
+
+        <div class="portfolio-item portfolio-portrait portfolio-hover-swap">
+          <div class="portfolio-media">
+            <img src="portrait_branding.jpg" alt="Portrait & Branding" class="swap-photo">
+            <video class="swap-video" muted loop playsinline webkit-playsinline preload="metadata" poster="portrait_branding.jpg">
+              <source src="video_portrait_branding.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="portfolio-overlay">Portrait & Branding</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="einzelprojekt" class="section single-project-section">
+    <div class="container single-project-wrap">
+      <p class="section-tag">Einzelprojekt</p>
+      <h2>Lieber ein Einzelprojekt statt ein Abo?</h2>
+      <p class="section-intro">
+        Auch Einzelanfragen sind möglich — ob Fotoshooting, Event-Video, Portraits oder kombinierte Produktionen.
+        Ideal für einmalige Projekte, spezielle Kampagnen oder den ersten gemeinsamen Auftrag.
+      </p>
+
+      <div class="single-project-points">
+        <div class="single-project-point">Fotoshooting</div>
+        <div class="single-project-point">Videoprojekt</div>
+        <div class="single-project-point">Foto + Video</div>
+      </div>
+
+      <div class="single-project-cta">
+        <button type="button" class="btn btn-gold" onclick="selectOffer('Einzelprojekt Foto + Video')">Einzelprojekt anfragen</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section why">
+    <div class="container split">
+      <div>
+        <p class="section-tag">Warum OTR-OnTouR</p>
+        <h2>Kein Standard. Sondern Content mit Wirkung.</h2>
+      </div>
+      <div>
+        <p>
+          Gute Bilder sehen nicht nur schön aus. Sie schaffen Vertrauen.
+          Gute Videos ziehen Aufmerksamkeit und halten sie.
+          Genau dafür ist OTR-OnTouR aufgebaut.
+        </p>
+
+        <div class="why-points">
+          <div class="why-box">
+            <h4>Premium Look</h4>
+            <p>Saubere Bildsprache, hochwertige Bearbeitung und professioneller Gesamteindruck.</p>
+          </div>
+          <div class="why-box">
+            <h4>Schneller Ablauf</h4>
+            <p>Klare Kommunikation, effiziente Umsetzung und saubere Lieferung.</p>
+          </div>
+          <div class="why-box">
+            <h4>Direkt für Social Media nutzbar</h4>
+            <p>Inhalte, die nicht nur gut aussehen, sondern auch online performen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="anfrage" class="section form-section">
+    <div class="container narrow">
+      <p class="section-tag">Anfrage</p>
+      <h2>Projekt oder Angebot anfragen</h2>
+      <p class="form-intro">
+        Wähle dein gewünschtes Modell oder Projekt und beschreibe kurz dein Vorhaben.
+      </p>
+
+      <form class="contact-form" action="mailto:info@otr-ontour.com" method="post" enctype="text/plain">
+        <input type="text" name="Name" placeholder="Name" required />
+        <input type="email" name="E-Mail" placeholder="E-Mail" required />
+        <input type="text" name="Telefon" placeholder="Telefon / WhatsApp (optional)" />
+
+        <select id="offer" name="Angebot" required>
+          <option value="" selected disabled>Gewähltes Angebot auswählen</option>
+          <option value="Starter Abo">Starter Abo</option>
+          <option value="Growth Abo">Growth Abo</option>
+          <option value="Premium Abo">Premium Abo</option>
+          <option value="Einzelprojekt Fotoshooting">Einzelprojekt Fotoshooting</option>
+          <option value="Einzelprojekt Videoprojekt">Einzelprojekt Videoprojekt</option>
+          <option value="Einzelprojekt Foto + Video">Einzelprojekt Foto + Video</option>
+          <option value="Individuelle Anfrage">Individuelle Anfrage</option>
+        </select>
+
+        <textarea name="Projekt" rows="6" placeholder="Beschreibe kurz dein Projekt, Ort, Datum und was du brauchst." required></textarea>
+        <button type="submit" class="btn btn-gold full">Anfrage senden</button>
+      </form>
+
+      <div class="direct-links icon-only-links">
+        <a class="icon-only-button" href="mailto:info@otr-ontour.com?subject=Anfrage%20OTR-OnTouR" aria-label="Per E-Mail anfragen">
+          <img src="icon-mail(1).png" alt="" class="button-icon-large">
+        </a>
+
+        <a class="icon-only-button" href="https://www.instagram.com/otr_ontour" target="_blank" rel="noopener" aria-label="Instagram öffnen">
+          <img src="icon-instagram(1).png" alt="" class="button-icon-large">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>© 2026 OTR-OnTouR by Milan Bachofner</p>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-to-top" aria-label="Nach oben scrollen">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 5l7 7-1.4 1.4L13 8.8V20h-2V8.8l-4.6 4.6L5 12l7-7z"/>
+    </svg>
+  </a>
+
+  <script src="script.js?v=20260319_fullsite_01"></script>
 </body>
 </html>
