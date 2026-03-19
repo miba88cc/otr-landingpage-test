@@ -1,97 +1,49 @@
-function selectOffer(offerName) {
-  const offerInput = document.getElementById("offer");
-  const formSection = document.getElementById("anfrage");
-
-  if (offerInput) {
-    offerInput.value = offerName;
-  }
-
-  if (formSection) {
-    formSection.scrollIntoView({ behavior: "smooth" });
-  }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const heroVideo = document.getElementById("heroVideo");
-
-  if (heroVideo) {
-    heroVideo.muted = true;
-    heroVideo.defaultMuted = true;
-    heroVideo.playsInline = true;
-    heroVideo.autoplay = true;
-    heroVideo.loop = true;
-
-    heroVideo.setAttribute("muted", "");
-    heroVideo.setAttribute("playsinline", "");
-    heroVideo.setAttribute("webkit-playsinline", "");
-    heroVideo.setAttribute("autoplay", "");
-    heroVideo.setAttribute("loop", "");
-
-    const tryPlayHero = () => {
-      const promise = heroVideo.play();
-      if (promise !== undefined) {
-        promise.catch(() => {});
-      }
-    };
-
-    heroVideo.addEventListener("loadeddata", tryPlayHero);
-    heroVideo.addEventListener("canplay", tryPlayHero);
-    window.addEventListener("pageshow", tryPlayHero);
-    document.addEventListener("visibilitychange", () => {
-      if (!document.hidden) {
-        tryPlayHero();
-      }
+// Smooth scroll navigation and simple scroll reveal animations
+document.addEventListener('DOMContentLoaded', () => {
+    // Smooth navigation scroll
+    const navLinks = document.querySelectorAll('header nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', event => {
+            const href = link.getAttribute('href');
+            if (href.startsWith('#')) {
+                event.preventDefault();
+                const targetId = href.slice(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    const offset = target.offsetTop - 60;
+                    window.scrollTo({
+                        top: offset,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
     });
 
-    tryPlayHero();
-  }
-
-  const portfolioVideos = document.querySelectorAll(".portfolio-video, .swap-video");
-
-  portfolioVideos.forEach((video) => {
-    video.muted = true;
-    video.defaultMuted = true;
-    video.playsInline = true;
-    video.autoplay = true;
-    video.loop = true;
-
-    video.setAttribute("muted", "");
-    video.setAttribute("playsinline", "");
-    video.setAttribute("webkit-playsinline", "");
-    video.setAttribute("autoplay", "");
-    video.setAttribute("loop", "");
-
-    const tryPlay = () => {
-      const promise = video.play();
-      if (promise !== undefined) {
-        promise.catch(() => {});
-      }
-    };
-
-    video.addEventListener("loadeddata", tryPlay);
-    video.addEventListener("canplay", tryPlay);
-    video.addEventListener("mouseenter", tryPlay);
-    video.addEventListener("touchstart", tryPlay, { passive: true });
-
-    tryPlay();
-  });
-
-  const hoverCards = document.querySelectorAll(".portfolio-hover-swap");
-
-  hoverCards.forEach((card) => {
-    const hoverVideo = card.querySelector(".swap-video");
-    if (!hoverVideo) return;
-
-    card.addEventListener("mouseenter", () => {
-      const promise = hoverVideo.play();
-      if (promise !== undefined) {
-        promise.catch(() => {});
-      }
+    // Change header style when scrolling
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     });
 
-    card.addEventListener("mouseleave", () => {
-      hoverVideo.pause();
-      hoverVideo.currentTime = 0;
+    // IntersectionObserver for scroll reveal
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -20% 0px'
     });
-  });
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+        observer.observe(el);
+    });
 });
