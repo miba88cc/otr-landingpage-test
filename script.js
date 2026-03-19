@@ -15,13 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroVideo = document.getElementById("heroVideo");
 
   if (heroVideo) {
-    const tryPlayHero = () => {
-      const promise = heroVideo.play();
-      if (promise !== undefined) {
-        promise.catch(() => {});
-      }
-    };
-
     heroVideo.muted = true;
     heroVideo.defaultMuted = true;
     heroVideo.playsInline = true;
@@ -34,10 +27,16 @@ document.addEventListener("DOMContentLoaded", () => {
     heroVideo.setAttribute("autoplay", "");
     heroVideo.setAttribute("loop", "");
 
+    const tryPlayHero = () => {
+      const promise = heroVideo.play();
+      if (promise !== undefined) {
+        promise.catch(() => {});
+      }
+    };
+
     heroVideo.addEventListener("loadeddata", tryPlayHero);
     heroVideo.addEventListener("canplay", tryPlayHero);
     window.addEventListener("pageshow", tryPlayHero);
-
     document.addEventListener("visibilitychange", () => {
       if (!document.hidden) {
         tryPlayHero();
@@ -50,13 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const portfolioVideos = document.querySelectorAll(".portfolio-video, .swap-video");
 
   portfolioVideos.forEach((video) => {
-    const tryPlay = () => {
-      const promise = video.play();
-      if (promise !== undefined) {
-        promise.catch(() => {});
-      }
-    };
-
     video.muted = true;
     video.defaultMuted = true;
     video.playsInline = true;
@@ -68,6 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
     video.setAttribute("webkit-playsinline", "");
     video.setAttribute("autoplay", "");
     video.setAttribute("loop", "");
+
+    const tryPlay = () => {
+      const promise = video.play();
+      if (promise !== undefined) {
+        promise.catch(() => {});
+      }
+    };
 
     video.addEventListener("loadeddata", tryPlay);
     video.addEventListener("canplay", tryPlay);
@@ -81,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   hoverCards.forEach((card) => {
     const hoverVideo = card.querySelector(".swap-video");
-
     if (!hoverVideo) return;
 
     card.addEventListener("mouseenter", () => {
